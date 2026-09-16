@@ -123,7 +123,7 @@ async function loadDashboard() {
     setProgress("wantsProgress", "wantsProgressText", wantTarget ? (wants / wantTarget) * 100 : 0);
     setProgress("savingsProgress", "savingsProgressText", savingTarget ? (savings / savingTarget) * 100 : 0);
     document.getElementById("budgetHelp").textContent = income > 0
-      ? `Needs: ${formatCurrency(needs, currency)} · Wants: ${formatCurrency(wants, currency)} · Savings: ${formatCurrency(savings, currency)}. Use this as a guide, not a strict limit.`
+        ? `Needs: ${formatCurrency(needs, currency)} ---- Wants: ${formatCurrency(wants, currency)} --- Savings: ${formatCurrency(savings, currency)}.       Use this as a guide, not a strict limit.`
       : "Add income for this month to calculate your 50/30/20 guide.";
 
     renderRecent(recentRows, currency);
