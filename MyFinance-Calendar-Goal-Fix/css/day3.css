@@ -211,7 +211,9 @@ html[data-theme="dark"]{
 .metric-card.metric-savings{background:linear-gradient(180deg,var(--surface),var(--saving-bg));}
 .metric-card.metric-balance .metric-value,.metric-card.metric-income .metric-value{color:var(--income)}
 .metric-card.metric-expenses .metric-value{color:var(--expense)}
-.metric-card.metric-savings .metric-value{color:var(--saving)}
+.metric-card.metric-savings .metric-value {
+    color: #ddaa33 !important;
+}
 
 /* 50 / 30 / 20 meaning colors */
 .budget-item.budget-needs{background:linear-gradient(135deg,var(--warning-bg),var(--pastel-yellow));}
@@ -493,8 +495,9 @@ html[data-theme="dark"] .metric-card.metric-balance{background:linear-gradient(1
 html[data-theme="dark"] .metric-card.metric-income{background:linear-gradient(145deg,var(--surface),#193127)}
 html[data-theme="dark"] .metric-card.metric-expenses{background:linear-gradient(145deg,var(--surface),#321f22)}
 html[data-theme="dark"] .metric-card.metric-savings {
-    background: color-mix(in srgb, var(--pastel-orange) 18%, #0c0a07) !important;
- border-top-color: color-mix(in srgb,var(--warning) 62%,var(--border)) !important;
+    background: linear-gradient(145deg, var(--surface), #3f2b0e);
+    /*background: color-mix(in srgb, var(--pastel-orange) 18%, #0c0a07) !important;*/
+    border-top-color: color-mix(in srgb,var(--warning) 62%,var(--border)) !important;
 }
 html[data-theme="dark"] .budget-item.budget-needs{background:linear-gradient(145deg,#2e2a1c,#39311f)}
 html[data-theme="dark"] .budget-item.budget-wants{background:linear-gradient(145deg,#30202a,#382431)}
