@@ -511,7 +511,7 @@ html[data-theme="dark"] .budget-item.budget-wants{background:linear-gradient(145
 html[data-theme="dark"] .budget-item.budget-savings{background:linear-gradient(145deg,#173029,#1e4237)}
 html[data-theme="dark"] .category-group-expense{background:linear-gradient(145deg,#321f21,var(--surface))}
 html[data-theme="dark"] .category-group-income{background:linear-gradient(145deg,#193127,var(--surface))}
-html[data-theme="dark"] .category-group-savings{background:linear-gradient(145deg,#173129,var(--surface))}
+html[data-theme="dark"] .category-group-savings{background:linear-gradient(145deg,#3f2f1c,var(--surface))}
 
 /* Ensure native controls remain readable in dark mode. */
 html[data-theme="dark"] input,
