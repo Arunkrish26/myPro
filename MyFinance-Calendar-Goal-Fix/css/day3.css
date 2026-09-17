@@ -47,7 +47,7 @@
 .metric-card .metric-note{display:block;margin-top:6px;color:var(--muted);font-size:11px}
 
 .budget-section{margin-top:16px;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:18px}
-.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:16px}.section-heading h2{margin:0;font-size:17px}.section-heading p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:16px}.section-heading h2{margin:0;font-size:17px;}.section-heading p{margin:4px 0 0;color:var(--muted);font-size:12px}
 .budget-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .budget-item{padding:14px;background:var(--surface-2);border-radius:14px}.budget-top{display:flex;justify-content:space-between;gap:10px}.budget-top strong{font-size:13px}.budget-top span{font-size:12px;font-weight:700;color:var(--muted)}
 .progress{height:8px;margin-top:10px;background:color-mix(in srgb,var(--border) 70%,transparent);border-radius:999px;overflow:hidden}.progress>span{display:block;height:100%;width:0;background:var(--primary);border-radius:999px;transition:width .25s ease}.budget-help{margin-top:12px;color:var(--muted);font-size:11px}
@@ -88,14 +88,18 @@
   --income:#2f8f63; --income-bg:#edf8f1;
   --expense:#c75a52; --expense-bg:#fff1ef;
   --warning:#c9862f; --warning-bg:#fff7e8;
-  --saving:#3f8f72; --saving-bg:#eef8f3;
+  /*--saving:#3f8f72; --saving-bg:#eef8f3;*/
+    --saving:#ddaa33; --saving-bg:#f2c36b;
+
   --info:#4d78a8; --info-bg:#eef4fb;
 }
 html[data-theme="dark"]{
   --income:#7bd4a5; --income-bg:#142a20;
   --expense:#ff958d; --expense-bg:#321a1b;
   --warning:#efb45b; --warning-bg:#332714;
-  --saving:#80d6b2; --saving-bg:#142b22;
+  /*--saving:#80d6b2; --saving-bg:#142b22;*/
+    --saving:#ddaa33; --saving-bg:#f2c36b;
+
   --info:#9ec2ea; --info-bg:#17283a;
 }
 
@@ -193,14 +197,17 @@ html[data-theme="dark"]{
   --expense:#c85b54; --expense-bg:#fff0ee;
   --income:#4c9568; --income-bg:#eff9f1;
   --warning:#c98732; --warning-bg:#fff8e9;
-  --saving:#3c9175; --saving-bg:#eef9f5;
+  /*--saving:#3c9175; --saving-bg:#eef9f5;*/
+    --saving:#ddaa33; --saving-bg:#f2c36b;
+
   --info:#4d7fa2; --info-bg:#eef7fb;
 }
 html[data-theme="dark"]{
   --expense:#ff9d95; --expense-bg:#331c1d;
   --income:#9cddb4; --income-bg:#163025;
   --warning:#f2c36b; --warning-bg:#332915;
-  --saving:#98dfc5; --saving-bg:#163129;
+  /*--saving:#98dfc5; --saving-bg:#163129;*/
+  --saving:#ddaa33; --saving-bg:#f2c36b;
   --info:#a9d7ee; --info-bg:#162a36;
 }
 
