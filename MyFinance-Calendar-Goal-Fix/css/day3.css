@@ -120,7 +120,7 @@ html[data-theme="dark"]{
 .budget-item.budget-savings .progress>span{background:var(--saving)}
 .budget-item.budget-needs .budget-top strong{color:var(--warning)}
 .budget-item.budget-wants .budget-top strong{color:var(--expense)}
-.budget-item.budget-savings .budget-top strong{color:var(--saving)}
+.budget-item.budget-savings .budget-top strong{color:#9fe0b7}
 
 .transaction-row .tx-icon.icon-income{background:var(--income-bg);color:var(--income)}
 .transaction-row .tx-icon.icon-expense{background:var(--expense-bg);color:var(--expense)}
