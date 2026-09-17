@@ -198,7 +198,7 @@ html[data-theme="dark"]{
   --income:#4c9568; --income-bg:#eff9f1;
   --warning:#c98732; --warning-bg:#fff8e9;
   /*--saving:#3c9175; --saving-bg:#eef9f5;*/
-    --saving:#ddaa33; --saving-bg:#f2c36b;
+    --saving:#ddaa33; --saving-bg:#352c1d;
 
   --info:#4d7fa2; --info-bg:#eef7fb;
 }
@@ -207,7 +207,7 @@ html[data-theme="dark"]{
   --income:#9cddb4; --income-bg:#163025;
   --warning:#f2c36b; --warning-bg:#332915;
   /*--saving:#98dfc5; --saving-bg:#163129;*/
-  --saving:#ddaa33; --saving-bg:#f2c36b;
+  --saving:#ddaa33; --saving-bg:#352c1d;
   --info:#a9d7ee; --info-bg:#162a36;
 }
 
