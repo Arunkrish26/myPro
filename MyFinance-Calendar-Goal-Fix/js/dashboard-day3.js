@@ -106,7 +106,7 @@ async function loadDashboard() {
       if (previousBalance > 0) balanceParts.push(`previous balance ${formatCurrency(previousBalance, currency)}`);
       if (goalContributionTotal > 0) balanceParts.push(`goal contributions ${formatCurrency(goalContributionTotal, currency)}`);
       balanceNote.textContent = balanceParts.length
-        ? `Includes ${balanceParts.join(" · ")}.`
+        ? ` ${balanceParts.join(" · ")}.`
         : "No previous balance or goal contribution adjustments for this month.";
     }
     document.getElementById("monthlyIncome").textContent = formatCurrency(income, currency);
