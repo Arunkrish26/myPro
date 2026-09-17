@@ -12,18 +12,24 @@
   <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
   <a class="top-brand" href="dashboard.html" aria-label="MyFinance dashboard"><span class="brand-mark small">₹</span><strong>MyFinance</strong></a><div class="app-title"><a class="back-nav" href="dashboard.html">← Dashboard</a><h1>Transactions</h1><p>Add a new transaction. Choose Expense, Income or Savings.</p></div><div class="app-actions"><div class="app-profile-wrap"><button id="profileButton" class="profile-button compact" type="button" aria-expanded="false"><span data-profile-initial class="avatar">U</span><span class="profile-summary"><strong data-profile-name>User</strong><small data-profile-email>—</small></span><span class="chevron">⌄</span></button><div id="profileMenu" class="profile-menu hidden"><div class="profile-menu-head"><span data-profile-initial class="avatar large">U</span><div><strong data-profile-name>User</strong><small data-profile-email>—</small></div></div><button id="themeToggle" class="menu-item theme-menu-item" type="button">🌙 Dark mode</button>
 <button id="myProfileLink" class="menu-item" type="button">My Profile</button><button id="settingsLink" class="menu-item" type="button">Settings</button><button id="logoutButton" class="menu-item danger" type="button">Logout</button></div></div></div></header>
-<section class="page-panel form-panel"><div class="section-heading"><div><h2 id="formTitle">Add Transaction</h2><p>Record one transaction only. Savings do not count as an expense.</p></div></div>
+<section class="page-panel form-panel"><div class="section-heading"><div><h2 id="formTitle">Add Transaction</h2>
+    <!--<p>Record one transaction only. Savings do not count as an expense.</p>-->
+       </div></div>
 <div id="formError" class="alert error hidden"></div><div id="formSuccess" class="alert success hidden"></div>
 <form id="transactionForm" class="form-grid" novalidate>
 <div class="form-field full"><label>Transaction Type</label><div class="radio-row"><label class="radio-option expense-option"><input type="radio" name="transactionType" value="expense" checked> Expense</label><label class="radio-option income-option"><input type="radio" name="transactionType" value="income"> Income</label><label class="radio-option savings-option"><input type="radio" name="transactionType" value="savings"> Savings</label></div></div>
 <div class="form-field"><label for="amount">Amount</label><input id="amount" type="number" min="1" step="0.01" inputmode="decimal" placeholder="e.g. 500" required><p class="hint">Enter a positive amount only.</p></div>
 <div class="form-field"><label for="category">Category</label><select id="category" required><option value="">Select category</option></select></div>
 <div id="budgetTypeField" class="form-field"><label>Expense Type</label><div class="radio-row"><label class="radio-option"><input type="radio" name="budgetType" value="needs" checked> Need</label><label class="radio-option"><input type="radio" name="budgetType" value="wants"> Want</label></div></div>
-<div id="vehicleField" class="form-field conditional-hidden"><label for="vehicle">Vehicle <span class="optional-label">(Optional)</span></label><select id="vehicle"><option value="">No vehicle</option></select><p class="hint">Link this expense to a vehicle for vehicle reports.</p></div><div class="form-field"><label for="transactionDate">Date</label><input id="transactionDate" type="date" required></div>
+<div id="vehicleField" class="form-field conditional-hidden"><label for="vehicle">Vehicle 
+    <!--<span class="optional-label">(Optional)</span>-->
+       </label><select id="vehicle"><option value="">No vehicle</option></select><p class="hint">Link this expense to a vehicle for vehicle reports.</p></div><div class="form-field"><label for="transactionDate">Date</label><input id="transactionDate" type="date" required></div>
 <div class="form-field"><label for="description">Description</label><input id="description" maxlength="150" placeholder="e.g. Office lunch"></div>
 <div class="form-field full"><label for="notes">Notes</label><textarea id="notes" maxlength="1000" placeholder="Optional notes about this transaction"></textarea></div>
 <div class="form-field full attachment-field">
-  <label for="attachment">Attachment <span class="optional-label">(Optional)</span></label>
+  <label for="attachment">Attachment
+    <!--<span class="optional-label">(Optional)</span>-->
+    </label>
   <div class="attachment-picker">
     <input id="attachment" class="attachment-input" type="file" accept="image/*,application/pdf">
     <div id="attachmentPreview" class="attachment-preview hidden">
