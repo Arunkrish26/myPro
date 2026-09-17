@@ -6,7 +6,8 @@ const showLoader = () => loader?.classList.remove("hidden");
 const hideLoader = () => loader?.classList.add("hidden");
 
 function monthStartEnd() {
-  return monthBounds(new Date());
+    // return monthBounds(new Date());
+    return monthBounds(new Date("2026-10-01"));
 }
 
 function currentMonthKey() {
