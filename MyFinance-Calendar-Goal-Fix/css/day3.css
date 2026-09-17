@@ -89,7 +89,7 @@
   --expense:#c75a52; --expense-bg:#fff1ef;
   --warning:#c9862f; --warning-bg:#fff7e8;
   /*--saving:#3f8f72; --saving-bg:#eef8f3;*/
-    --saving:#ddaa33; --saving-bg:#f2c36b;
+    --saving:#ddaa33; --saving-bg:#352d1f;
 
   --info:#4d78a8; --info-bg:#eef4fb;
 }
@@ -98,7 +98,7 @@ html[data-theme="dark"]{
   --expense:#ff958d; --expense-bg:#321a1b;
   --warning:#efb45b; --warning-bg:#332714;
   /*--saving:#80d6b2; --saving-bg:#142b22;*/
-    --saving:#ddaa33; --saving-bg:#f2c36b;
+    --saving:#ddaa33; --saving-bg:#352d1f;
 
   --info:#9ec2ea; --info-bg:#17283a;
 }
