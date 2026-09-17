@@ -21,16 +21,98 @@ function currentMonthKey() {
   return monthStartEnd().start;
 }
 
+// async function fetchMonthlyBudget(userId) {
+//   const { data, error } = await sb.from("monthly_budgets")
+//     .select("id,month,previous_balance")
+//     .eq("user_id", userId)
+//     .eq("month", currentMonthKey())
+//     .maybeSingle();
+//   if (error) throw error;
+//   return data || { id: null, month: currentMonthKey(), previous_balance: 0 };
+// }
 async function fetchMonthlyBudget(userId) {
-  const { data, error } = await sb.from("monthly_budgets")
+  const currentMonth = currentMonthKey();
+
+  // First check whether the current month already has a saved previous balance
+  const { data: currentBudget, error: currentError } = await sb.from("monthly_budgets")
     .select("id,month,previous_balance")
     .eq("user_id", userId)
-    .eq("month", currentMonthKey())
+    .eq("month", currentMonth)
     .maybeSingle();
-  if (error) throw error;
-  return data || { id: null, month: currentMonthKey(), previous_balance: 0 };
-}
 
+  if (currentError) throw currentError;
+
+  // If current month already has a previous balance, use it as it is.
+  // This preserves the existing Set Balance functionality.
+  if (currentBudget) {
+    return currentBudget;
+  }
+
+  // Current month has no previous balance.
+  // Find the latest previous month's budget.
+  const { data: previousBudget, error: previousError } = await sb.from("monthly_budgets")
+    .select("id,month,previous_balance")
+    .eq("user_id", userId)
+    .lt("month", currentMonth)
+    .order("month", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (previousError) throw previousError;
+
+  if (!previousBudget) {
+    return {
+      id: null,
+      month: currentMonth,
+      previous_balance: 0
+    };
+  }
+
+  // Calculate the previous month's closing balance
+  const previousMonthStart = new Date(`${previousBudget.month}T00:00:00`);
+  const previousMonthEnd = new Date(previousMonthStart);
+  previousMonthEnd.setMonth(previousMonthEnd.getMonth() + 1);
+
+  const previousStart = previousBudget.month;
+  const previousEnd = previousMonthEnd.toISOString().slice(0, 10);
+
+  const { data: previousTransactions, error: transactionError } = await sb.from("transactions")
+    .select("transaction_type, amount")
+    .eq("user_id", userId)
+    .gte("transaction_date", previousStart)
+    .lt("transaction_date", previousEnd);
+
+  if (transactionError) throw transactionError;
+
+  const previousIncome = amountFor(previousTransactions || [], "income");
+  const previousExpenses = amountFor(previousTransactions || [], "expense");
+  const previousSavingsTransactions = amountFor(previousTransactions || [], "savings");
+
+  const { data: previousGoalContributions, error: goalError } = await sb.from("goal_contributions")
+    .select("amount")
+    .eq("user_id", userId)
+    .gte("contribution_date", previousStart)
+    .lt("contribution_date", previousEnd);
+
+  if (goalError) throw goalError;
+
+  const previousGoalTotal = (previousGoalContributions || [])
+    .reduce((sum, row) => sum + Number(row.amount || 0), 0);
+
+  const previousSavings = previousIncome - previousExpenses;
+
+  const closingBalance =
+    Math.max(0, Number(previousBudget.previous_balance || 0))
+    + previousSavings
+    - previousSavingsTransactions
+    - previousGoalTotal;
+
+  return {
+    id: null,
+    month: currentMonth,
+    previous_balance: closingBalance
+  };
+}
 async function fetchMonthGoalContributions(userId) {
   const bounds = monthStartEnd();
   const { data, error } = await sb.from("goal_contributions")
