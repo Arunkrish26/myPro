@@ -127,7 +127,7 @@ html[data-theme="dark"]{
 .transaction-row .tx-icon.icon-savings{background:var(--saving-bg);color:var(--saving)}
 .tx-amount.income{color:var(--income)}
 .tx-amount.expense{color:var(--expense)}
-.tx-amount.saving{color:var(--saving)}
+.tx-amount.saving{color:var(--saving) !important}
 
 .status-badge.type-income{background:var(--income-bg);color:var(--income)}
 .status-badge.type-expense{background:var(--expense-bg);color:var(--expense)}
