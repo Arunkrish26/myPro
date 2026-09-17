@@ -5,18 +5,18 @@ const loader = document.getElementById("pageLoader");
 const showLoader = () => loader?.classList.remove("hidden");
 const hideLoader = () => loader?.classList.add("hidden");
 
-// function monthStartEnd() {
-//     // return monthBounds(new Date());
-//     return monthBounds(new Date("2026-10-01"));
-// }
 function monthStartEnd() {
-    const testDate = new Date(2026, 9, 1);
-
-    console.log("TEST DATE:", testDate);
-    console.log("MONTH BOUNDS:", monthBounds(testDate));
-
-    return monthBounds(testDate);
+     return monthBounds(new Date());
+    //return monthBounds(new Date("2026-10-01"));
 }
+// function monthStartEnd() {
+//     const testDate = new Date(2026, 9, 1);
+
+//     console.log("TEST DATE:", testDate);
+//     console.log("MONTH BOUNDS:", monthBounds(testDate));
+
+//     return monthBounds(testDate);
+// }
 function currentMonthKey() {
   return monthStartEnd().start;
 }
